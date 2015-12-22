@@ -5,6 +5,13 @@ angular.module('app.main').controller('AppCntl', function (SIGN_IN_DLG_PATH, $sc
         $scope.currentUser = currentUser;
     });
 
+
+    $scope.$state = $state;
+
+    $scope.login = function() {
+        $state.go('tableMgmt.search');
+    }
+
     $scope.logOff = function () {
         var goToSignInDialogFullyReloadingApp = function () {
             $state.go('signIn', {}, {reload: true});
