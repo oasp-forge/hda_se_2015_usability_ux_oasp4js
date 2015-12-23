@@ -46,7 +46,7 @@ angular.module('app.table-mgmt', ['app.offer-mgmt', 'app.sales-mgmt', 'app.main'
         controllerAs: 'TOC',
         resolve: {
             paginatedTableList: ['tables', function (tables) {
-                return tables.getPaginatedTables(1, 4).then(function(paginatedTables) {
+                return tables.getPaginatedTables(1, 6).then(function(paginatedTables) {
                     return paginatedTables;
                 });
             }]
