@@ -4,6 +4,13 @@
 angular.module('app.table-mgmt')
     .controller('TableOrdersCntl', function ($scope, tables, paginatedTableList, sales) {
         'use strict';
+        // Sales
+        $scope.model = [];
+
+        $scope.ordered = function(tableNumber) {
+            var positions = $scope.model[tableNumber].positions;
+            return Object.keys(positions).length;
+        };
 
         // Color for warning
         $scope.height = '100px';
@@ -24,6 +31,20 @@ angular.module('app.table-mgmt')
             data: paginatedTableList.result
         };
 
+
+        $scope.load = function (tableID, index) {
+            sales.loadOrderForTable(tableID)
+                .then(function (order) {
+                    $scope.model[index] = order;
+                });
+        };
+
+        for (var i = 0; i < $scope.totalItems; i++) {
+            var tableID = $scope.gridOptions.data[i].id;
+            $scope.load(tableID, i);
+        }
+
+
         $scope.reloadTables = function () {
             tables.getPaginatedTables($scope.currentPage, $scope.numPerPage).then(function (paginatedTables) {
                 return paginatedTables;
@@ -36,6 +57,8 @@ angular.module('app.table-mgmt')
         $scope.$watch('currentPage', function () {
             $scope.reloadTables();
         });
+
+
 
 
     });

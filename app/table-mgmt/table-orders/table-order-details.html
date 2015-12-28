@@ -1,14 +1,14 @@
-<div class="panel panel-info">
-    <div class="panel-heading" ng-bind="'Tisch'  + i.number"></div>
-    <div class="panel-body">
+<div class="panel panel-info" ng-click=''> <!--placeholder for collapse-->
+    <div class="panel-heading" ng-bind="'Tisch '  + i.number"></div>
+    <div class="panel-body" ng-class=""> <!--placeholder for collapse-->
         <div class="row">
             <div class="col-xs-1" ng-style="{ 'height' : height, 'background' : bgColor }"></div>
             <div class="col-xs-7">
                 <h4>0 Posten ausgeliefert</h4>
                 <hr>
-                <h4>0 Posten ausgeliefert</h4>
+                <h4>0 Posten zubereitet</h4>
                 <hr>
-                <h4>0 Posten ausgeliefert</h4>
+                <h4> <span ng-bind="ordered(i.number-1)">0</span> Posten bestellt</h4>
             </div>
             <div class="col-xs-4 vcenter">
                 <button type="button" class="btn btn-danger btn-block">Rechnung drucken</button>
