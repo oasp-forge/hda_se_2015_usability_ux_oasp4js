@@ -1,0 +1,33 @@
+<div>
+	<div class="modal-header">
+		<h3 class="modal-title">Zusammenfassung</h3>
+		<small>Hier stehen alle Getränke ihrer aktuellen Bestellung</small>
+	</div>
+
+	<div class="modal-body">
+		<ul style="list-style: none">
+			<div ng-show="!drinks.length">Bisher befinden sich keine Getränke in Ihrere Bestellung</div>
+			<li data-ng-repeat="drink in drinks track by $index ">
+				{{$index+1}}
+				<div style="border: solid black 2px;margin: 0.4em;width: 60%;display: inline-block;padding:0.5em;">
+					{{drink.Name}}
+					<span style="display: inline-block;float: right">{{drink.Price}}</span>
+
+				</div>
+				<span class="glyphicon glyphicon-trash" data-ng-click="remove($index)" aria-hidden="true"></span>
+
+			</li>
+		</ul>
+	</div>
+
+	<div class="modal-footer">
+		<div style="display: block;text-align: center" data-ng-hide="!drinks.length">
+			<span style="display: inline-block;">Ihre Bestellung besteht aus {{amount}} Getränken</span>
+			<span style="display:inline-block;">Gesamtsumme: {{sum}}</span>
+		</div>
+		<div>
+			<button class="btn btn-primary" type="button" ng-click="cancel()">Bestellliste schließen</button>
+			<button class="btn btn-success" type="button" ng-click="ok()">Bestellen</button>
+		</div>
+	</div>
+</div>

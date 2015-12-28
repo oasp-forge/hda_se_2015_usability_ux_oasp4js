@@ -1,25 +1,51 @@
 /**
  * @ngdoc object
- * @name app.offer-mgmt
+ * @name app.table-mgmt
  * @module app
+ * @requires app.offer-mgmt
+ * @requires app.sales-mgmt
  * @requires app.main
+ * @requires table-mgmt.templates
  */
-angular.module('app.guest-mgmt', ['app.offer-mgmt', 'app.sales-mgmt', 'app.main', 'app.table-mgmt' ,'app.table-mgmt.templates'])
-     {
+angular.module('app.guest-mgmt', ['app.main'])
+    .config(function ($stateProvider) {
         'use strict';
 
-         oaspTranslationProvider.enableTranslationForModule('guest-mgmt');
+        $stateProvider
+            .state('guestMgmt', {
+                abstract: true,
+                url: '/guest-mgmt',
+                template: '<ui-view/>'
+            })
+            .state('guestMgmt.overview', {
+                url: '/guest-overview',
+                templateUrl: 'guest-mgmt/guest-overview/guest-overview.tpl.html',
+                controller: 'GuestOverviewCntl',
+                controllerAs: 'GOC'
+            })
 
-         $stateProvider.state('guestMgmt', {
-             abstract: true,
-             url: '/guest-mgmt',
-             template: '<ui-view/>'
-         });
 
-         $stateProvider.state('guestMgmt.overview', {
-             url: '/guest-mgmt/guest-overview',
-             templateUrl: 'guest-mgmt/guest-overview/guest-overview.html',
-             controller: 'GuestOverviewCntl',
-             controllerAs: 'GOC',
-         });
-    }
+            .state('guestMgmt.drinks', {
+                url: '/guest-drinks',
+                templateUrl: 'guest-mgmt/guest-drinks/guest-drinks.tpl.html',
+                controller: 'GuestDrinksCntl',
+                controllerAs: 'GDC'
+            });
+
+    }).
+    filter('unique', function () {
+    return function (collection, keyname) {
+        var output = [],
+            keys = [];
+
+        angular.forEach(collection, function (item) {
+            var key = item[keyname];
+            if (keys.indexOf(key) === -1) {
+                keys.push(key);
+                output.push(item);
+            }
+        });
+
+        return output;
+    };
+});

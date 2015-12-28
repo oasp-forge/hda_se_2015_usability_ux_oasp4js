@@ -1,0 +1,38 @@
+<div data-ng-controller="GuestDrinksCntl">
+	<h1>Getränkekarte</h1>
+	Search: <input data-ng-model="search">
+
+	<ui-select ng-model="selecteditem.selected" theme="bootstrap" append-to-body="true" search-enabled="false" reset-search-input="true" on-select="someFunction($item, $model)">
+		<ui-select-match placeholder="Kategorie auswählen">
+			<span>{{$select.selected.Type}}</span>
+			<span class="glyphicon glyphicon-remove" style="float: right;margin-right: 5%" data-ng-click="clear()"></span>
+		</ui-select-match>
+		<ui-select-choices repeat="item in drinks| unique:'Type'">
+			<span ng-bind="item.Type |highlight: $select.search"></span>
+		</ui-select-choices>
+	</ui-select>
+
+
+	<div class="row">
+		<div data-ng-repeat="drink in drinks |filter:search | filter: filterType " class="col-md-6 panel panel-default">
+			<div class="panel-body">
+				{{drink.Name}}
+				<div style="display: inline;">{{drink.Price}}
+					<span style="float: right" class="glyphicon glyphicon-plus-sign" aria-hidden="true" data-ng-click="add(drink)"></span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<button type="button" class="btn btn-danger" ui-sref="guestMgmt.overview">Abbrechen <br>
+		<small>Getränkebestellung</small>
+	</button>
+
+	<button type="button" class="btn btn-success" data-ng-click="cart()">Ihre Bestellliste <br>
+		<small>Zusammenfassung</small>
+	                                                                     {{number}}
+	</button>
+
+
+</div>

@@ -1,0 +1,50 @@
+{
+  "articles": [
+    {
+      "Id": 1,
+      "Name": "Cola",
+      "Category": "0",
+      "Type": "Softdrink",
+      "Price": "1.99",
+      "Ingredient" : "Ingredient 1, Ingredient 2"
+    },
+    {
+      "Id": 2,
+      "Name": "Fanta",
+      "Category": "0",
+      "Type": "Softdrink",
+      "Price": "1.99",
+      "Ingredient" : "Ingredient 1, Ingredient 2"
+    },{
+      "Id": 3,
+      "Name": "Sprite",
+      "Category": "0",
+      "Type": "Softdrink",
+      "Price": "1.99",
+      "Ingredient": "Ingredient 1, Ingredient 2"
+    },
+    {
+      "Id": 4,
+      "Name": "Wasser",
+      "Category": "0",
+      "Type": "Softdrink",
+      "Price": "1.99",
+      "Ingredient": "Ingredient 1, Ingredient 2"
+    },{
+      "Id": 5,
+      "Name": "Bier",
+      "Category": "0",
+      "Type": "Beer",
+      "Price": "1.99",
+      "Ingredient": "Ingredient 1, Ingredient 2"
+    },
+    {
+      "Id": 6,
+      "Name": "Sex on the Beach",
+      "Category": "0",
+      "Type": "Cocktail",
+      "Price": "1.99",
+      "Ingredient": "Ingredient 1, Ingredient 2"
+    }
+  ]
+}

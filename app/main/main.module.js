@@ -54,13 +54,6 @@ angular.module('app.main', ['ui.router', 'oasp.oaspUi', 'oasp.oaspSecurity', 'ap
                 templateUrl: 'main/layout/page-not-found.html'
             })
 
-            .state('guest', {
-                url:  '/guest',
-                templateUrl: 'main/guest/guest.html',
-                controller: 'GuestCntl',
-                controllerAs: 'GMC'
-            })
-
             .state('signIn', {
                 url: SIGN_IN_DLG_PATH,
                 templateUrl: 'main/sign-in/sign-in.html',
