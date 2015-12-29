@@ -4,8 +4,7 @@
  * @module app
  * @requires app.main
  */
-angular.module('app.guest-mgmt', ['app.offer-mgmt', 'app.sales-mgmt', 'app.main', 'app.table-mgmt' ,'app.table-mgmt.templates'])
-     {
+angular.module('app.guest-mgmt', ['app.offer-mgmt', 'app.sales-mgmt', 'app.main', 'app.table-mgmt' ,'app.table-mgmt.templates']) , function ($stateProvider, oaspTranslationProvider) {
         'use strict';
 
          oaspTranslationProvider.enableTranslationForModule('guest-mgmt');
