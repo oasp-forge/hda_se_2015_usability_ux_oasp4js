@@ -1,46 +1,14 @@
 <div class="row">
 
     <div class="col-md-6">
-        <div ng-repeat="i in gridOptions.data" ng-if="$index < gridOptions.data.length / 2" ng-include="'/table-mgmt/table-orders/table-order-details.html'">
+        <div ng-repeat="(id, table) in gridOptions.data" ng-if="$index < gridOptions.data.length / 2" ng-include="'/table-mgmt/table-orders/table-order-details.html'">
         </div>
     </div>
 
     <div class="col-md-6">
-        <div ng-repeat="i in gridOptions.data" ng-if="$index >= gridOptions.data.length / 2" ng-include="'/table-mgmt/table-orders/table-order-details.html'">
+        <div ng-repeat="(id, table) in gridOptions.data" ng-if="$index >= gridOptions.data.length / 2" ng-include="'/table-mgmt/table-orders/table-order-details.html'">
         </div>
     </div>
 </div>
 
-<p>debug</p>
-<p>{{model[0].positions[0].id}}</p>
-<p> {{ result }} </p>
-
-
-
-
-<!--<div class="row">
-    <div class="col-md-6">
-
-
-        <div class="panel panel-info">
-            <div class="panel-heading">Panel Heading</div>
-            <div class="panel-body">Panel Content</div>
-        </div>
-
-    </div>
-
-    <div class="col-md-6">
-
-        <div class="panel panel-info">
-            <div class="panel-heading">Panel Heading</div>
-            <div class="panel-body">Panel Content</div>
-        </div>
-
-
-    </div>
-
-</div>
-
-
-<p> {{ getSumOrdersForTable(0) }}</p>-->
-
+<p> {{ model[0] }}</p>

@@ -38,6 +38,7 @@ angular.module('app.table-mgmt', ['app.offer-mgmt', 'app.sales-mgmt', 'app.main'
         controllerAs: 'TDC'
     });
 
+
     // @author Oliver Neff
     $stateProvider.state('tableMgmt.orders', {
         url: '/table-orders',
@@ -52,5 +53,4 @@ angular.module('app.table-mgmt', ['app.offer-mgmt', 'app.sales-mgmt', 'app.main'
             }]
         }
     });
-
 });

@@ -1,21 +1,21 @@
 <div class="panel panel-info" ng-click=''> <!--placeholder for collapse-->
-    <div class="panel-heading" ng-bind="'Tisch '  + i.number"></div>
+    <div class="panel-heading" ng-bind="'Tisch '  + table.number"></div>
     <div class="panel-body" ng-class=""> <!--placeholder for collapse-->
         <div class="row">
             <div class="col-xs-1" ng-style="{ 'height' : height, 'background' : bgColor }"></div>
             <div class="col-xs-7">
-                <h4> <span ng-bind="delivered(i.number-1)">0</span> Posten ausgeliefert</h4>
+                <h4> <span ng-bind="delivered(id).length">0</span> Posten ausgeliefert</h4>
                 <hr>
-                <h4> <span ng-bind="prepared(i.number-1)">0</span> Posten zubereitet</h4>
+                <h4> <span ng-bind="prepared(id).length">0</span> Posten zubereitet</h4>
                 <hr>
-                <h4> <span ng-bind="ordered(i.number-1)">0</span> Posten bestellt</h4>
+                <h4> <span ng-bind="ordered(id).length">0</span> Posten bestellt</h4>
             </div>
             <div class="col-xs-4 vcenter">
-                <button type="button" class="btn btn-danger btn-block"  ng-click="cancelleAllOrder(i.number-1)">Rechnung drucken</button>
+                <button type="button" class="btn btn-danger btn-block"  ng-click="cancelleAllOrder(id)">Rechnung drucken</button>
                 <br>
-                <button type="button" class="btn btn-info btn-block" ng-click="deliverAllOrders(i.number-1)">Posten ausliefern</button>
+                <button type="button" class="btn btn-info btn-block" ng-click="deliverAllOrders(id)">Posten ausliefern</button>
                 <br>
-                <button type="button" class="btn btn-info btn-block">Posten einsehen</button>
+                <button type="button" class="btn btn-info btn-block" ng-click="details(id,table.number)">Posten einsehen</button>
             </div>
         </div>
     </div>
