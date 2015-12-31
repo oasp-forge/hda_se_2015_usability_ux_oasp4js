@@ -1,0 +1,40 @@
+<div>
+	<div class="modal-header guestModalHeader">
+		<img style="float: left" width="5%" src="../../main/img/cocktail12.png">
+		<h3 class="modal-title">Zusammenfassung<br>
+			<small>Hier sehe Sie alle Getränke die Teil Ihrere Bestellung sind.</small></h3>
+		<img style="float: right" width="5%" src="../../main/img/cocktail12.png">
+
+
+	</div>
+
+	<div class="modal-body guestCartBody">
+		<ul style="list-style: none">
+			<div class="guestCartNoItems" ng-show="!items.length">Bisher befinden sich keine Getränke in Ihrer Bestellung</div>
+			<li data-ng-repeat="item in items track by $index ">
+				{{$index+1}}
+				<div class="guestCartItem" >
+					{{item.Name}}
+					<span style="display: inline-block;float: right">{{item.Price}}</span>
+
+				</div>
+				<img class="guestCartRemove" src="../../main/img/delete96.svg" data-ng-click="remove($index)">
+
+
+			</li>
+		</ul>
+	</div>
+
+	<div class="modal-footer">
+		<div data-ng-hide="!items.length" class="guestCartSummary">
+			<span class="btn-left" >Ihre Bestellung besteht aus {{amount}} Getränken</span>
+			<span class="btn-right">Gesamtsumme: {{sum}}</span>
+			<br>
+		</div>
+
+		<div class="guestCartSummary">
+			<button class="btn btn-primary btn-left" type="button" ng-click="cancel()">Bestellliste schließen</button>
+			<button class="btn btn-success btn-right" data-ng-disabled="!items.length" type="button" ng-click="ok()">Jetzt Bestellen</button>
+		</div>
+	</div>
+</div>

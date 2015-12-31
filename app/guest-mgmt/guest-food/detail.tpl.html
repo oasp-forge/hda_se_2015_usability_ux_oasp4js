@@ -1,0 +1,37 @@
+<style>
+	li {
+		cursor: pointer;
+	}
+</style>
+
+
+<div>
+	<div class="modal-header">
+		<h3 class="modal-title">{{food.Name}}</h3>
+		<small>{{food.Description}}</small>
+	</div>
+
+	<div class="modal-body">
+		<div style="width: 50%;display: inline-block">
+			Beilage
+			<ul style="list-style: none">
+				<li data-ng-click="highlight($index)" ng-class="{ 'selected-class-name': $index == marker }" data-ng-repeat="sidedish in food.OptionalSideDishes">{{sidedish}}</li>
+			</ul>
+		</div>
+		<div style="background-color: #8c8c8c;width: 40%;display: inline-block">
+			Inhaltsstoffe:
+			<ul>
+				<li data-ng-repeat="ingredient in food.Ingredients">{{ingredient}}</li>
+			</ul>
+		</div>
+
+
+	</div>
+
+	<div class="modal-footer">
+		<div>
+			<button class="btn btn-primary" type="button" ng-click="cancel()">Detailliste schließen</button>
+			<button class="btn btn-success" type="button" ng-click="add(food)">Zur Bestellung hinzufügen</button>
+		</div>
+	</div>
+</div>

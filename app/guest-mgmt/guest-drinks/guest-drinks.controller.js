@@ -1,12 +1,26 @@
 angular.module('app.guest-mgmt')
-    .controller('GuestDrinksCntl', function ($scope, menu, $modal) {
+    .controller('GuestDrinksCntl', function ($scope, menu, $modal,$filter) {
         'use strict';
         $scope.number = menu.getAmount();
+        $scope.pageStart = 0;
+        $scope.pageEnd = 6;
+        $scope.itemsPerPage = 6;
+        $scope.currentPage = 1;
 
         menu.loadAllArticles()
             .then(function (response) {
-                $scope.drinks = response.articles;
+                $scope.drinks = $filter('category')(response.articles, '0');
+                $scope.totalItems = $scope.drinks.length;
             });
+
+
+        $scope.changePage = function () {
+
+            $scope.pageStart = $scope.itemsPerPage * ($scope.currentPage - 1);
+            $scope.pageEnd = $scope.pageStart + $scope.itemsPerPage;
+
+        };
+
 
         $scope.add = function (res) {
             menu.addToCart(res);
@@ -18,8 +32,8 @@ angular.module('app.guest-mgmt')
 
             var modalInstance = $modal.open({
                 animation: false,
-                templateUrl: 'guest-mgmt/guest-cart/guest-cart.tpl.html',
-                controller: 'GuestCartCntl',
+                templateUrl: 'guest-mgmt/guest-drinkcart/guest-drinkcart.tpl.html',
+                controller: 'GuestDrinkCartCntl',
                 size: "lg",
                 resolve: {
                     items: function () {
@@ -37,11 +51,14 @@ angular.module('app.guest-mgmt')
 
         $scope.someFunction = function (item, model) {
             $scope.filterType = item.Type;
+            var temp = $filter('filter')($scope.drinks, $scope.filterType);
+            $scope.totalItems = temp.length;
         }
 
         $scope.clear = function () {
             $scope.filterType = undefined;
             $scope.selecteditem.selected = undefined;
+            $scope.totalItems = $scope.drinks.length;
 
         };
 

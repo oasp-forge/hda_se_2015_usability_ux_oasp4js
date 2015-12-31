@@ -1,5 +1,5 @@
 angular.module('app.guest-mgmt')
-    .controller('GuestCartCntl', function ($scope, $modalInstance, menu, items) {
+    .controller('GuestDrinkCartCntl', function ($scope, $modalInstance, menu, items) {
         'use strict';
 
         $scope.items = items;
@@ -15,7 +15,7 @@ angular.module('app.guest-mgmt')
 
         };
 
-        $scope.remove =function (element){
+        $scope.remove = function (element) {
             menu.removeFromCart(element);
             $scope.items = menu.getCart();
             $scope.amount = menu.getAmount();

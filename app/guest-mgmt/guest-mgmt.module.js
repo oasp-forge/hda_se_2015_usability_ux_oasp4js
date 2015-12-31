@@ -16,15 +16,22 @@ angular.module('app.guest-mgmt', ['app.main'])
                 abstract: true,
                 url: '/guest-mgmt',
                 template: '<ui-view/>'
-            })
+            });
+        $stateProvider
             .state('guestMgmt.overview', {
                 url: '/guest-overview',
                 templateUrl: 'guest-mgmt/guest-overview/guest-overview.tpl.html',
                 controller: 'GuestOverviewCntl',
                 controllerAs: 'GOC'
-            })
-
-
+            });
+        $stateProvider
+            .state('guestMgmt.food', {
+                url: '/guest-food',
+                templateUrl: 'guest-mgmt/guest-food/guest-food.tpl.html',
+                controller: 'GuestFoodCntl',
+                controllerAs: 'GFC'
+            });
+        $stateProvider
             .state('guestMgmt.drinks', {
                 url: '/guest-drinks',
                 templateUrl: 'guest-mgmt/guest-drinks/guest-drinks.tpl.html',
@@ -32,8 +39,8 @@ angular.module('app.guest-mgmt', ['app.main'])
                 controllerAs: 'GDC'
             });
 
-    }).
-    filter('unique', function () {
+    })
+    .filter('unique', function () {
     return function (collection, keyname) {
         var output = [],
             keys = [];
@@ -48,4 +55,20 @@ angular.module('app.guest-mgmt', ['app.main'])
 
         return output;
     };
-});
+    })
+    .filter('category', function () {
+    return function (collection, category) {
+            var tempCollection = [];
+                angular.forEach(collection, function (item) {
+                    if (angular.equals(item.Category, category)) {
+                        tempCollection.push(item);
+                    }
+                });
+            return tempCollection;
+
+    };
+}).filter('slice', function () {
+    return function (arr, start, end) {
+        return arr.slice(start, end);
+    };
+});;
