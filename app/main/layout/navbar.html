@@ -1,3 +1,6 @@
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation" data-ng-controller="AppCntl">
+    <div class="container underline">
+
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation" data-ng-controller="AppCntl" data-ng-show="currentUser.isLoggedIn()">
     <div class="container">
         <div class="navbar-header">
@@ -10,14 +13,73 @@
             </button>
             <a class="navbar-brand" href="#" translate>OASP.TITLE</a>
         </div>
+
+
+        <ul class="nav nav-tabs" data-ng-show="currentUser.isLoggedIn()">
+            <li ng-class="{active: $state.current.url == '/table-search'}"><a href="#table-mgmt/table-search" translate>OASP.TABLES</a>
+            </li>
+            <li ng-class="{active: $state.current.url == '/table-orders'}"><a href="#table-mgmt/table-orders" translate>OASP.ORDERS</a>
+            </li>
+        </ul>
+
+        <ul class="nav nav-tabs" data-ng-show="!currentUser.isLoggedIn()">
+            <li ng-class="{active: $state.current.url == '/main/sign-in'}"><a href="#/main/sign-in" translate>Sign In</a>
+            </li>
+            <li ng-class="{active: $state.current.url == '/guest'}"><a href="#/guest" translate>Gast</a>
+            </li>
+        </ul>
+
+
+        <div class="collapse navbar-collapse" data-ng-class="{'in':!navCollapsed}">
+
+            <ul class="nav navbar-nav navbar-right">
+                <error-log></error-log>
+            </ul>
+
+            <!--If a user is logged in-->
+            <div class="ng-cloak navbar-right" data-ng-show="currentUser.isLoggedIn()">
+                <span class="navbar-text"><span translate="">OASP.LOGGED_IN_AS</span>:&nbsp;<span
+                    data-ng-bind="currentUser.getUserName()"></span></span>
+                <button data-ng-click="logOff()" class="btn navbar-btn btn-sm btn-info" translate="">OASP.LOG_OFF
+                </button>
+            </div>
+
+            <!--If no user is logged in. -->
+            <div class="ng-cloak navbar-right" data-ng-show="!currentUser.isLoggedIn()">
+                <button data-ng-click="login()" class="btn navbar-btn btn-sm btn-info" translate=""> Sign In</button>
+            </div>
+
+            <ul class="nav navbar-nav navbar-right">
+                <language-change></language-change>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<!--    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"
+                    data-ng-init="navCollapsed = true" data-ng-click="navCollapsed = !navCollapsed">
+                <span class="sr-only" translate>OASP.TOGGLE_NAV</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#" translate>OASP.TITLE</a>
+        </div>
+
+
         <div class="collapse navbar-collapse" data-ng-class="{'in':!navCollapsed}">
             <ul class="ng-cloak nav navbar-nav" data-ng-show="currentUser.isLoggedIn()">
+                <li><a href="#table-mgmt/table-orders" translate>OASP.ORDERS</a></li>
                 <li><a href="#table-mgmt/table-search" translate>OASP.TABLES</a></li>
                 <li><a href="#/sales-mgmt/cook-positions"
                        data-ng-show="currentUser.getUserName() === 'Carl Cook' || currentUser.getUserName() === 'Charly Chief'"
                        translate>OASP.KITCHEN</a>
                 </li>
             </ul>
+
             <div class="ng-cloak navbar-right" data-ng-show="currentUser.isLoggedIn()">
                 <span class="navbar-text"><span translate="">OASP.LOGGED_IN_AS</span>:&nbsp;<span
                     data-ng-bind="currentUser.getUserName()"></span></span>
@@ -31,6 +93,6 @@
                 <language-change></language-change>
             </ul>
         </div>
-    </div>
+    </div>-->
 </div>
 

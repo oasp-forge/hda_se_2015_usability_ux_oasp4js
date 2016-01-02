@@ -38,6 +38,7 @@ angular.module('app.table-mgmt', ['app.offer-mgmt', 'app.sales-mgmt', 'app.main'
         controllerAs: 'TDC'
     });
 
+
     // @author Oliver Neff
     $stateProvider.state('tableMgmt.orders', {
         url: '/table-orders',
@@ -46,11 +47,27 @@ angular.module('app.table-mgmt', ['app.offer-mgmt', 'app.sales-mgmt', 'app.main'
         controllerAs: 'TOC',
         resolve: {
             paginatedTableList: ['tables', function (tables) {
-                return tables.getPaginatedTables(1, 4).then(function(paginatedTables) {
+                return tables.getPaginatedTables(1, 999).then(function(paginatedTables) {
                     return paginatedTables;
                 });
             }]
         }
     });
+
+
+    $stateProvider.state('tableMgmt.overview', {
+        url: '/table-overview',
+        templateUrl: 'table-mgmt/table-overview/table-overview.tpl.html',
+        controller: 'TableOverviewCntl',
+        controllerAs: 'TOV',
+        resolve: {
+            paginatedTableList: ['tables', function (tables) {
+                return tables.getPaginatedTables(1, 999).then(function(paginatedTables) {
+                    return paginatedTables;
+                });
+            }]
+        }
+    });
+
 
 });

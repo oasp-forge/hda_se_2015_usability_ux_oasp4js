@@ -198,5 +198,13 @@ angular.module('app.sales-mgmt')
                 });
         };
 
+        that.setPositionStatusToDelivered = function (positionId) {
+            return salesManagementRestService.updateOrderPosition(positionManager.setStatusOfPosition('PREPARED',
+                positionId))
+                .then(function () {
+                    return that.get();
+                });
+        };
+
         return that;
     });

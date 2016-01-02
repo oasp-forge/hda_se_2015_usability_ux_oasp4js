@@ -1,0 +1,32 @@
+<div>
+    <div class="modal-header">
+        <h3 class="modal-title">Posten ausliefern - Tisch <span ng-bind="tableNumber"></span></h3>
+    </div>
+    <div class="modal-body">
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Number</th>
+                <th>Title</th>
+                <th>Ausgeliefert</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr ng-repeat="(id, order) in positions">
+                <td><h4 ng-bind="order.offerId"></h4></td>
+                <td><h4 ng-bind="order.offerName"></h4></td>
+                <td><input class="big-checkbox" type="checkbox" ng-click="change(id)"
+                           ng-checked="order.state == 'DELIVERED'">
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-danger pull-left" ng-click="close()">Close</button>
+        <button type="button" class="btn btn-primary" ng-click="deliverAllOrders()">Alles ausgeliefert</button>
+        <button type="button" class="btn btn-primary" ng-click="deliverOrders()">Markiertes ausgeliefert</button>
+    </div>
+</div>

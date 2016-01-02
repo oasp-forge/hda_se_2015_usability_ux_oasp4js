@@ -1,59 +1,8 @@
-<div class="row">
-    <div class="col-md-6">
-        <div ng-repeat="i in gridOptions.data" ng-if="$even" class="panel panel-primary">
-            <div class="panel-heading"><label translate> TABLE_MGMT.TABLE.NAME </label> {{ i.number }}</div>
-            <div class="panel-body">
-                <div class="row">
-                    <div class="col-xs-2 col-md-2"><label> Anzahl </label></div>
-                    <div class="col-xs-2 col-md-2"><label> Nummer </label></div>
-                    <div class="col-xs-3 col-md-3"><label> Name </label></div>
-                    <div class="col-xs-3 col-md-3"><label> Status </label></div>
-                    <div class="col-xs-2 col-md-2"><label> Fertig </label></div>
-                </div>
-                <div ng-repeat="order in getSumOrdersForTable(i.number-1)" ng-if="display(order.state)" class="row">
-                    <div class="col-xs-2 col-md-2"><label> {{ order.count}}x </label></div>
-                    <div class="col-xs-2 col-md-2"><label> {{ order.offerId }} </label></div>
-                    <div class="col-xs-3 col-md-3"><label> {{ order.offerName }} </label></div>
-                    <div class="col-xs-3 col-md-3"><label class={{getStateColor(order.state)}}> {{ order.state }} </label></div>
-                    <div class="col-xs-2 col-md-2"><label><input type="checkbox" value="order.ids" ng-disabled="order.state == 'ORDERED'"/></label></div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-2 col-md-2"></div>
-                    <div class="col-xs-2 col-md-2"></div>
-                    <div class="col-xs-3 col-md-3"></div>
-                    <div class="col-xs-3 col-md-3"></div>
-                    <div class="col-xs-2 col-md-2"><button type="button" class="btn btn-primary">Primary</button></div>
-                </div>
-            </div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6" ng-repeat="(id, table) in gridOptions.data"
+             ng-include="'/table-mgmt/table-orders/table-order-details.html'">
         </div>
     </div>
-    <div class="col-md-6">
-        <div ng-repeat="i in gridOptions.data" ng-if="$odd" class="panel panel-primary">
-            <div class="panel-heading"><label translate> TABLE_MGMT.TABLE.NAME </label> {{ i.number }}</div>
-            <div class="panel-body">
-                <div class="row">
-                    <div class="col-xs-2 col-md-2"><label> Anzahl </label></div>
-                    <div class="col-xs-2 col-md-2"><label> Nummer </label></div>
-                    <div class="col-xs-3 col-md-3"><label> Name </label></div>
-                    <div class="col-xs-3 col-md-3"><label> Status </label></div>
-                    <div class="col-xs-2 col-md-2"><label> Fertig </label></div>
-                </div>
-                <div ng-repeat="order in model[i.number-1].positions" class="row">
-                    <div class="col-xs-2 col-md-2"><label> 1x </label></div>
-                    <div class="col-xs-2 col-md-2"><label> {{ order.offerId }} </label></div>
-                    <div class="col-xs-3 col-md-3"><label> {{ order.offerName }} </label></div>
-                    <div class="col-xs-3 col-md-3"><label class="alert alert-success"> {{ order.state }} </label></div>
-                    <div class="col-xs-2 col-md-2"><label><input type="checkbox" value=""></label></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-xs-12">
-        <pagination total-items="totalItems" items-per-page="numPerPage" ng-model="currentPage" num-pages="numPages"
-                    class="pagination-sm" boundary-links="true" rotate="false" max-size="maxSize"></pagination>
-    </div>
+    <p> {{gridOptions.data}}</p>
 </div>
-
-
-<p> {{ getSumOrdersForTable(0) }}</p>
-
