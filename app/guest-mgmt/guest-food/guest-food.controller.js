@@ -1,7 +1,7 @@
 angular.module('app.guest-mgmt')
 .controller('GuestFoodCntl',function($scope, menu, $modal,$filter){
     'use strict';
-    $scope.number = menu.getAmount();
+    $scope.number = menu.getFoodCartAmount();
     $scope.pageStart = 0;
     $scope.pageEnd = 6;
     $scope.itemsPerPage = 6;
@@ -21,8 +21,8 @@ angular.module('app.guest-mgmt')
 
 
     $scope.add = function (res) {
-        menu.addToCart(res);
-        $scope.number = menu.getAmount();
+        menu.addToFoodCart(res);
+        $scope.number = menu.getFoodCartAmount();
 
     };
 
@@ -35,13 +35,13 @@ angular.module('app.guest-mgmt')
             size: "lg",
             resolve: {
                 items: function () {
-                    return menu.getCart();
+                    return menu.getFoodCart();
                 }
             }
         });
 
         modalInstance.result.then(function (selectedItem) {
-            $scope.number = menu.getAmount();
+            $scope.number = menu.getFoodCartAmount();
         });
     };
     $scope.detail = function (food) {
@@ -59,7 +59,7 @@ angular.module('app.guest-mgmt')
         });
 
         modalInstance.result.then(function (selectedItem) {
-            $scope.number = menu.getAmount();
+            $scope.number = menu.getFoodCartAmount();
         });
     };
 

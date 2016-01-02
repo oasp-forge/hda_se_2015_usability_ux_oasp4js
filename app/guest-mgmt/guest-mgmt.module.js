@@ -7,7 +7,7 @@
  * @requires app.main
  * @requires table-mgmt.templates
  */
-angular.module('app.guest-mgmt', ['app.main'])
+angular.module('app.guest-mgmt', ['app.main', 'app.sales-mgmt'])
     .config(function ($stateProvider) {
         'use strict';
 

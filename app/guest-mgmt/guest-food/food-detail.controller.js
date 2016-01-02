@@ -7,11 +7,12 @@ angular.module('app.guest-mgmt')
 
         $scope.highlight = function(element){
             $scope.food.SideDish = element;
+
             $scope.marker = element
         }
 
         $scope.cancel = function () {
-            $modalInstance.close()
+            $modalInstance.dismiss('cancel');
         };
         $scope.add = function (food) {
             menu.addToCart(food);

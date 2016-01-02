@@ -2,7 +2,7 @@
   "articles": [
     {
       "Id": 1,
-      "Name": "Cola",
+      "Name": "Coca Cola",
       "Category": "0",
       "Type": "Softdrink",
       "Price": "1.99",
@@ -66,12 +66,25 @@
     },
     {
       "Id": 7,
-      "Name": "Rahmschnitzel",
+      "Name": "Schnitzel Wiener Art",
       "Category": "1",
       "Type": "vom Schwein",
       "Price": "7.99",
       "Ingredients": ["Ingredient 1", "Ingredient 2"],
-      "Description": "Paniertes Schweineschnitzel mit Rahmsauce",
+      "Description": "Schweineschnitzel nach Wiener Art",
+      "SideDish": 0,
+      "OptionalSideDishes":[
+        "Pommes und Ketchup",
+        "Ofenkartoffel"
+        ]
+    },
+    {"Id": 8,
+      "Name": "Jägerschnitzeln",
+      "Category": "1",
+      "Type": "vom Schwein",
+      "Price": "7.99",
+      "Ingredients": ["Ingredient 1", "Ingredient 2"],
+      "Description": "Schweineschnitzel mit Pilzsauce",
       "SideDish": 0,
       "OptionalSideDishes":[
         "Pommes und Ketchup",
@@ -79,7 +92,7 @@
         ]
     },
     {
-      "Id": 8,
+      "Id": 9,
       "Name": "Argentinisches Rumpsteak",
       "Category": "1",
       "Type": "vom Rind",
@@ -96,7 +109,7 @@
         ]
     },
     {
-      "Id": 9,
+      "Id": 10,
       "Name": "Fischgericht 1",
       "Category": "1",
       "Type": "Fisch",
@@ -113,7 +126,7 @@
         ]
     },
     {
-      "Id": 10,
+      "Id": 11,
       "Name": "Vegetarisches Gericht 1",
       "Category": "1",
       "Type": "Vegetarisch",
@@ -130,7 +143,7 @@
         ]
     },
     {
-      "Id": 11,
+      "Id": 12,
       "Name": "Rahmschnitzel",
       "Category": "1",
       "Type": "vom Schwein",
@@ -144,7 +157,7 @@
         ]
     },
     {
-      "Id": 12,
+      "Id": 13,
       "Name": "Argentinisches Rumpsteak",
       "Category": "1",
       "Type": "vom Rind",
@@ -161,7 +174,7 @@
         ]
     },
     {
-      "Id": 13,
+      "Id": 14,
       "Name": "Fischgericht 1",
       "Category": "1",
       "Type": "Fisch",
@@ -178,7 +191,7 @@
         ]
     },
     {
-      "Id": 14,
+      "Id": 15,
       "Name": "Vegetarisches Gericht 1",
       "Category": "1",
       "Type": "Vegetarisch",

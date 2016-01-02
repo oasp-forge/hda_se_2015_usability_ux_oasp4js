@@ -1,6 +1,7 @@
 angular.module('app.guest-mgmt').factory('menu', function (guestManagementRestService) {
     'use strict';
-    var shoppingCart = [];
+    var DrinkCart = [];
+    var FoodCart = [];
 
     return {
 
@@ -16,31 +17,63 @@ angular.module('app.guest-mgmt').factory('menu', function (guestManagementRestSe
             });
 
         },
-
-        addToCart: function (article) {
-            shoppingCart.push(article);
+        addToDrinkCart: function (article) {
+            DrinkCart.push(article);
         },
-        getCart: function () {
-            return shoppingCart;
+        getDrinkCart: function () {
+            return DrinkCart;
         },
-        getAmount: function () {
-            return shoppingCart.length;
+        getDrinkCartAmount: function () {
+            return DrinkCart.length;
         },
-        getSum: function () {
+        getDrinkCartSum: function () {
             var sum = 0;
 
-            for (var i = 0; i < shoppingCart.length; i++) {
-                sum += parseFloat(shoppingCart[i].Price);
+            for (var i = 0; i < DrinkCart.length; i++) {
+                sum += parseFloat(DrinkCart[i].Price);
 
             }
             return sum;
         },
-        removeFromCart: function (item) {
-            for (var i = shoppingCart.length - 1; i >= 0; i--) {
+        removeFromDrinkCart: function (item) {
+            for (var i = DrinkCart.length - 1; i >= 0; i--) {
                 if (i === item) {
-                    shoppingCart.splice(i, 1);
+                    DrinkCart.splice(i, 1);
                 }
             }
+        },
+
+        clearDrinkCart: function (){
+            DrinkCart = [];
+        },
+        addToFoodCart: function (article) {
+            FoodCart.push(article);
+        },
+        getFoodCart: function () {
+            return FoodCart;
+        },
+        getFoodCartAmount: function () {
+            return FoodCart.length;
+        },
+        getFoodCartSum: function () {
+            var sum = 0;
+
+            for (var i = 0; i < FoodCart.length; i++) {
+                sum += parseFloat(FoodCart[i].Price);
+
+            }
+            return sum;
+        },
+        removeFromFoodCart: function (item) {
+            for (var i = FoodCart.length - 1; i >= 0; i--) {
+                if (i === item) {
+                    FoodCart.splice(i, 1);
+                }
+            }
+        },
+
+        clearFoodCart: function(){
+            FoodCart = [];
         }
 
 

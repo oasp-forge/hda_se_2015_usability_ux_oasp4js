@@ -180,6 +180,7 @@ html, Body {
 .guestCartRemove {
     width: 5%;
     cursor: pointer;
+
 }
 .guestCartNoItems {
     width: 100%;

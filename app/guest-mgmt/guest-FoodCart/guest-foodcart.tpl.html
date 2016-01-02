@@ -1,3 +1,9 @@
+<script type="text/ng-template" id="alert.html">
+	<div class="alert" style="background-color:#fa39c3;color:white" role="alert">
+		<div ng-transclude></div>
+	</div>
+</script>
+
 <div>
 	<div class="modal-header guestModalHeader">
 		<img style="float: left" width="5%" src="../../main/img/plate7.png">
@@ -11,16 +17,17 @@
 
 	<div class="modal-body guestCartBody">
 		<ul style="list-style: none">
-			<div class="guestCartNoItems" ng-show="!items.length">Bisher befinden sich keine Speisen in Ihrer Bestellung</div>
+			<div class="guestCartNoItems" ng-show="!items.length && !alerts.length">Bisher befinden sich keine Speisen in Ihrer Bestellung</div>
+			<alert ng-repeat="alert in alerts" type="{{alert.type}}"><h4>{{alert.header}}</h4>{{alert.msg}}</alert>
 			<li data-ng-repeat="item in items track by $index ">
 				{{$index+1}}
 				<div class="guestCartItem">
 					{{item.Name}}
-					<span style="display: inline-block;float: right">{{item.Price}}</span>
-
+					<br><small>Beilage: {{item.OptionalSideDishes[item.SideDish]}}</small>
+					<span style="display: inline-block;float: right">{{item.Price | currency:'€'}}</span>
 				</div>
+				<img class="guestCartRemove" src="../../main/img/pencil43.svg" data-ng-click="edit(item,$index)">
 				<img class="guestCartRemove" src="../../main/img/delete96.svg" data-ng-click="remove($index)">
-
 
 			</li>
 		</ul>
@@ -29,7 +36,7 @@
 	<div class="modal-footer">
 		<div data-ng-hide="!items.length" class="guestCartSummary">
 			<span class="btn-left">Ihre Bestellung besteht aus {{amount}} Speisen</span>
-			<span class="btn-right">Gesamtsumme: {{sum}}</span>
+			<span class="btn-right">Gesamtsumme: {{sum | currency:'€'}}</span>
 			<br>
 		</div>
 

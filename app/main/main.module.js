@@ -13,7 +13,8 @@ angular.module('app.main', ['ui.router', 'oasp.oaspUi', 'oasp.oaspSecurity', 'ap
     .constant('SIGN_IN_DLG_PATH', '/main/sign-in')
     .constant('ROLES', {
         COOK: 'COOK',
-        WAITER: 'WAITER'
+        WAITER: 'WAITER',
+        GUEST: 'GUEST'
     })
     .config(function (SIGN_IN_DLG_PATH, $stateProvider, $urlRouterProvider, $urlMatcherFactoryProvider, oaspTranslationProvider, valdrProvider) {
         'use strict';
