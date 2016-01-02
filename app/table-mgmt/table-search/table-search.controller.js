@@ -34,7 +34,7 @@ angular.module('app.table-mgmt')
 
         $scope.value = "hello";
         $scope.go = function() {
-            $state.go('tableMgmt.orders');
+            $state.go('tableMgmt.overview');
         }
 
         $scope.buttonDefs = [

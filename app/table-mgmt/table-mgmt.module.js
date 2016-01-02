@@ -53,4 +53,21 @@ angular.module('app.table-mgmt', ['app.offer-mgmt', 'app.sales-mgmt', 'app.main'
             }]
         }
     });
+
+
+    $stateProvider.state('tableMgmt.overview', {
+        url: '/table-overview',
+        templateUrl: 'table-mgmt/table-overview/table-overview.tpl.html',
+        controller: 'TableOverviewCntl',
+        controllerAs: 'TOV',
+        resolve: {
+            paginatedTableList: ['tables', function (tables) {
+                return tables.getPaginatedTables(1, 999).then(function(paginatedTables) {
+                    return paginatedTables;
+                });
+            }]
+        }
+    });
+
+
 });

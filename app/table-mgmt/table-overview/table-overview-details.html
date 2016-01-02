@@ -1,0 +1,19 @@
+<div class="panel" ng-class="panelState(table.state)">
+    <div class="panel-heading clearfix">
+        <h4 class="panel-title pull-left" style="padding-top: 7.5px;" ng-cloak>Tisch {{ table.number}}</h4>
+        <div class="btn-group pull-right">
+            <button type="button" class="btn btn-primary btn-sm" ng-class="{'active': table.state == 'FREE'} ">Frei</button>
+            <button type="button" class="btn btn-primary btn-sm" ng-class="{'active': table.state == 'OCCUPIED'}" >Belegt</button>
+        </div>
+    </div>
+    <div class="panel-body">
+        <p>Nächste Reservierung</p>
+        <p><span class="pull-left">Von</span><span class="pull-right">C.Mayer</span></p>
+        <br>
+        <hr>
+        <p><span class="pull-left">Für</span><span class="pull-right">Abends</span></p>
+        <br>
+        <br>
+        <button type="button" class="btn btn-primary btn-block">Reservierungen anzeigen</button>
+    </div>
+</div>
