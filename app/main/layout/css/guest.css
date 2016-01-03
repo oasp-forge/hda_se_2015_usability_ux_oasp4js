@@ -1,14 +1,18 @@
-html, Body {
-    width: 100% !important;
-    height: 100% !important;
-    margin: 0;
-    padding: 0;
-}
-
 .guest {
     background-color: #003B73;
     width: 100%;
-    height: 100%
+    height: 100%;
+    margin-top:0;
+    padding-top: 0%;
+}
+
+.guestContent{
+    width: 80%;
+    height: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+    display: block;
 }
 
 .guestHead {
@@ -151,6 +155,10 @@ html, Body {
 
 .selected-class-name {
     color: red;
+    border: 1px solid black;
+    padding-left: 1%;
+    width: 70%;
+    font-weight: 700;
 }
 
 .btn-right {

@@ -1,5 +1,5 @@
 angular.module('app.guest-mgmt')
-    .controller('GuestDrinkCartCntl', function ($scope, $modalInstance, menu, items, sales,$http) {
+    .controller('GuestDrinkCartCntl', function ($scope, $modalInstance, menu, items, sales) {
         'use strict';
 
         $scope.items = items;
@@ -10,25 +10,48 @@ angular.module('app.guest-mgmt')
         $scope.order = []
         $scope.id = 1;
 
+        var tdcSelf = this;
+        tdcSelf.model = {};
+        tdcSelf.totalItems = 0;
+
+        $scope.tableId = "104"
+        $scope.totalItems;
+
+
+        sales.loadOrderForTable($scope.tableId)
+            .then(function (order) {
+                console.log(order);
+                tdcSelf.model.order = order;
+                tdcSelf.totalItems = angular.isDefined(order) ? tdcSelf.model.order.positions.length : 0;
+            });
 
         $scope.ok = function () {
-            $scope.order = {
-                "order": {
-                    state: "OPEN",
-                    tableId: 105
-                },
-                "positions": [{
+
+
+            if (!tdcSelf.model.order) {
+
+                tdcSelf.model.order = {
+                    order: {
+                        tableId: $scope.tableId,
+                        state: 'OPEN'
+                    },
+                    positions: []
+                };
+            }
+            angular.forEach($scope.items, function (item) {
+                tdcSelf.model.order.positions.push({
                     comment: "",
                     offerId: 1,
-                    offerName: "Schnitzel-Menü",
-                    orderId: undefined,
-                    price: "6.99",
+                    offerName: item.Name,
+                    orderId: tdcSelf.model.order.order.id,
+                    price: item.Price,
                     revision: null,
                     state: "ORDERED"
-                }]
-            };
+                });
+            });
+            tdcSelf.totalItems = tdcSelf.model.order.positions.length;
 
-            sales.saveOrUpdateOrder($scope.order).then(function () {
+            sales.saveOrUpdateOrder(tdcSelf.model.order).then(function () {
                 menu.clearDrinkCart();
                 $scope.items = [];
                 $scope.alerts.push({
@@ -37,9 +60,6 @@ angular.module('app.guest-mgmt')
                     type: 'success'
                 });
             });
-
-            //sales.saveOrUpdateOrder($scope.order);
-            // $modalInstance.close();
         };
 
         $scope.cancel = function () {

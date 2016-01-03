@@ -18,6 +18,27 @@ angular.module('app.guest-mgmt', ['app.main', 'app.sales-mgmt'])
                 template: '<ui-view/>'
             });
         $stateProvider
+            .state('guestMgmt.welcome', {
+                url: '/guest-welcome',
+                templateUrl: 'guest-mgmt/guest-welcome/guest-welcome.tpl.html',
+                controller: 'GuestWelcomeCntl',
+                controllerAs: 'GWC'
+            });
+        $stateProvider
+            .state('guestMgmt.book', {
+                url: '/guest-book',
+                templateUrl: 'guest-mgmt/guest-book/guest-book.tpl.html',
+                controller: 'GuestBookCntl',
+                controllerAs: 'GBC'
+            });
+        $stateProvider
+            .state('guestMgmt.confirm', {
+                url: '/guest-book',
+                templateUrl: 'guest-mgmt/guest-confirm/guest-confirm.tpl.html',
+                controller: 'GuestBookConfirmCntl',
+                controllerAs: 'GBCC'
+            });
+        $stateProvider
             .state('guestMgmt.overview', {
                 url: '/guest-overview',
                 templateUrl: 'guest-mgmt/guest-overview/guest-overview.tpl.html',

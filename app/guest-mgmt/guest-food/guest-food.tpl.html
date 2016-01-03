@@ -1,13 +1,13 @@
 <div class="navbar navbar-inverse navbar-fixed-top guestNavbar" role="navigation">
 	<div class="container">
-	<div class="guestSearchNavbar "><input data-ng-model="search" data-ng-change="searchChange()" placeholder="Suche..."></div>
+	<div class="guestSearchNavbar ">
+			<input data-ng-model="search" data-ng-change="searchChange()" type="text" class="form-control" placeholder="Speise suchen">
+		</div>
 	<div class="guestCenterNavbar"><h1>Speisekarte</h1></div>
 	</div>
 </div>
 
-<div class="content" data-ng-controller="GuestFoodCntl">
-
-
+<div class="guestContent" data-ng-controller="GuestFoodCntl">
 	<ui-select class="guestSearch" ng-model="selecteditem.selected" theme="bootstrap"
 	          search-enabled="true" reset-search-input="true" on-select="someFunction($item, $model)">
 		<ui-select-match placeholder="Kategorie auswählen">

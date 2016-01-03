@@ -2,6 +2,7 @@
   "articles": [
     {
       "Id": 1,
+      "OrderId":1,
       "Name": "Coca Cola",
       "Category": "0",
       "Type": "Softdrink",
@@ -13,6 +14,7 @@
     },
     {
       "Id": 2,
+      "OrderId": 1,
       "Name": "Fanta",
       "Category": "0",
       "Type": "Softdrink",

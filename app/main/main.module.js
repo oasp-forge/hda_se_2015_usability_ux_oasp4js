@@ -13,8 +13,7 @@ angular.module('app.main', ['ui.router', 'oasp.oaspUi', 'oasp.oaspSecurity', 'ap
     .constant('SIGN_IN_DLG_PATH', '/main/sign-in')
     .constant('ROLES', {
         COOK: 'COOK',
-        WAITER: 'WAITER',
-        GUEST: 'GUEST'
+        WAITER: 'WAITER'
     })
     .config(function (SIGN_IN_DLG_PATH, $stateProvider, $urlRouterProvider, $urlMatcherFactoryProvider, oaspTranslationProvider, valdrProvider) {
         'use strict';
@@ -56,7 +55,7 @@ angular.module('app.main', ['ui.router', 'oasp.oaspUi', 'oasp.oaspSecurity', 'ap
             })
 
             .state('signIn', {
-                url: SIGN_IN_DLG_PATH,
+                url: '/signin',
                 templateUrl: 'main/sign-in/sign-in.html',
                 controller: 'SignInCntl',
                 controllerAs: 'SIC'
@@ -71,11 +70,11 @@ angular.module('app.main', ['ui.router', 'oasp.oaspUi', 'oasp.oaspSecurity', 'ap
                 {
                     key: 'en',
                     label: 'English',
-                    'default': true
                 },
                 {
                     key: 'de',
-                    label: 'German'
+                    label: 'German',
+                    'default': true
                 }
             ]
         );

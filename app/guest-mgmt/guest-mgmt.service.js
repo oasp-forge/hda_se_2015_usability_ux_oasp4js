@@ -2,6 +2,8 @@ angular.module('app.guest-mgmt').factory('menu', function (guestManagementRestSe
     'use strict';
     var DrinkCart = [];
     var FoodCart = [];
+    var booking;
+    var alert;
 
     return {
 
@@ -74,6 +76,19 @@ angular.module('app.guest-mgmt').factory('menu', function (guestManagementRestSe
 
         clearFoodCart: function(){
             FoodCart = [];
+        },
+
+        saveBookingForConfirmation: function(bookData){
+            booking = bookData
+        },
+        getBooking: function(){
+            return booking;
+        },
+        setAlert: function(alerts){
+            alert = alerts;
+        },
+        getAlerts: function(){
+            return alert;
         }
 
 

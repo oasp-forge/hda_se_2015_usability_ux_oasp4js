@@ -6,21 +6,26 @@
 
 
 <div>
-	<div class="modal-header">
-		<h3 class="modal-title">{{food.Name}}</h3>
-		<small>{{food.Description}}</small>
+	<div class="modal-header guestModalHeader">
+		<img style="float: left" width="5%" src="../../main/img/plate7.png">
+		<h3 class="modal-title">{{food.Name}}<br>
+			<small>{{food.Description}}</small>
+		</h3>
+		<img style="float: right" width="5%" src="../../main/img/plate7.png">
+
+
 	</div>
 
 	<div class="modal-body">
-		<div style="width: 50%;display: inline-block">
-			Beilage
+		<div style="width: 50%;display: inline-block;">
+			<h4>Beilage wählen:</h4>
 			<ul style="list-style: none">
 				<li data-ng-click="highlight($index)" ng-class="{ 'selected-class-name': $index == marker }" data-ng-repeat="sidedish in food.OptionalSideDishes">{{sidedish}}</li>
 			</ul>
 		</div>
-		<div style="background-color: #8c8c8c;width: 40%;display: inline-block">
-			Inhaltsstoffe:
-			<ul>
+		<div style="width: 40%;display: inline-block; border-left: 1px solid black;text-align: center">
+			<h4>Inhaltsstoffe:</h4>
+			<ul style="list-style: none">
 				<li data-ng-repeat="ingredient in food.Ingredients">{{ingredient}}</li>
 			</ul>
 		</div>

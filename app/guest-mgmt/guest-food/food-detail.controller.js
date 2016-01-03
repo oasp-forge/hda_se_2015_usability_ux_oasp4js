@@ -15,10 +15,8 @@ angular.module('app.guest-mgmt')
             $modalInstance.dismiss('cancel');
         };
         $scope.add = function (food) {
-            menu.addToCart(food);
+            menu.addToFoodCart(food);
             $modalInstance.close();
         };
-
-
 
     });

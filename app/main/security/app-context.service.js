@@ -31,6 +31,11 @@ angular.module('app.main')
                     },
                     getHomeDialogPath: function () {
                         return (currentUser.profile && currentUser.profile.homeDialogPath) || '';
+                    },
+                    isGuest:function(){
+                        if (currentUser.profile.id == 3){
+                            return true;
+                        }
                     }
                 };
             },
@@ -43,11 +48,15 @@ angular.module('app.main')
                         currentUserInternal.profile.homeDialogPath = '/table-mgmt/table-search';
                     } else if (userProfile.role === 'COOK') {
                         currentUserInternal.profile.homeDialogPath = '/sales-mgmt/cook-positions';
+                    } else if (userProfile.role === 'BARKEEPER') {
+                        currentUserInternal.profile.homeDialogPath = '/guest-mgmt/guest-welcome';
+                        return;
                     } else {
                         // TODO: add rest (+ default?) roles and dialogs
                         currentUserInternal.profile.homeDialogPath = '/table-mgmt/table-search';
                     }
                 }
+
             },
             switchToAnonymousUser = function () {
                 currentUserInternal.isLoggedIn = false;
