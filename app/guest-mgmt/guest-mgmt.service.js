@@ -3,7 +3,7 @@ angular.module('app.guest-mgmt').factory('menu', function (guestManagementRestSe
     var DrinkCart = [];
     var FoodCart = [];
     var booking;
-    var alert;
+    var alert = [];
 
     return {
 
@@ -85,10 +85,13 @@ angular.module('app.guest-mgmt').factory('menu', function (guestManagementRestSe
             return booking;
         },
         setAlert: function(alerts){
-            alert = alerts;
+            alert.push(alerts);
         },
         getAlerts: function(){
             return alert;
+        },
+        deleteAlerts: function(){
+            alert = [];
         }
 
 
