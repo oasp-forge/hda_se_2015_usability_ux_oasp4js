@@ -23,7 +23,7 @@ angular.module('app.guest-mgmt')
 
 
         $scope.add = function (res) {
-            menu.addToDrinkCart(res);
+            menu.addToDrinkCart(angular.copy(res));
             $scope.number = menu.getDrinkCartAmount();
 
         };

@@ -15,7 +15,6 @@ angular.module('app.guest-mgmt')
 
         sales.loadOrderForTable($scope.tableId)
             .then(function (order) {
-                console.log(order);
                 tdcSelf.model.order = order;
                 tdcSelf.totalItems = angular.isDefined(order) ? tdcSelf.model.order.positions.length : 0;
             });

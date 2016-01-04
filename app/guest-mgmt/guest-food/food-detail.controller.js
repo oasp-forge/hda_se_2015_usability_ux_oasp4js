@@ -2,13 +2,16 @@ angular.module('app.guest-mgmt')
     .controller('GuestFoodDetailCntl', function ($scope, menu, $modalInstance, items) {
         'use strict';
 
-        $scope.food = items;
-        $scope.marker = 0;
+
+        $scope.item = items;
+        $scope.marker = items.SideDish
+
+
 
         $scope.highlight = function(element){
-            $scope.food.SideDish = element;
-
+            $scope.item.SideDish =element;
             $scope.marker = element
+
         }
 
         $scope.cancel = function () {

@@ -21,7 +21,7 @@ angular.module('app.guest-mgmt')
 
 
     $scope.add = function (res) {
-        menu.addToFoodCart(res);
+        menu.addToFoodCart(angular.copy(res));
         $scope.number = menu.getFoodCartAmount();
 
     };
@@ -53,7 +53,7 @@ angular.module('app.guest-mgmt')
             size: "lg",
             resolve: {
                 items: function () {
-                    return food;
+                    return angular.copy(food);
                 }
             }
         });

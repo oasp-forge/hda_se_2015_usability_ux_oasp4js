@@ -8,8 +8,8 @@
 <div>
 	<div class="modal-header guestModalHeader">
 		<img style="float: left" width="5%" src="../../main/img/plate7.png">
-		<h3 class="modal-title">{{food.Name}}<br>
-			<small>{{food.Description}}</small>
+		<h3 class="modal-title">{{item.Name}}<br>
+			<small>{{item.Description}}</small>
 		</h3>
 		<img style="float: right" width="5%" src="../../main/img/plate7.png">
 
@@ -20,13 +20,13 @@
 		<div style="width: 50%;display: inline-block;">
 			<h4>Beilage wählen:</h4>
 			<ul style="list-style: none">
-				<li data-ng-click="highlight($index)" ng-class="{ 'selected-class-name': $index == marker }" data-ng-repeat="sidedish in food.OptionalSideDishes">{{sidedish}}</li>
+				<li data-ng-click="highlight($index)" ng-class="{ 'selected-class-name': $index == marker }" data-ng-repeat="sidedish in item.OptionalSideDishes">{{sidedish}}</li>
 			</ul>
 		</div>
 		<div style="width: 40%;display: inline-block; border-left: 1px solid black;text-align: center">
 			<h4>Inhaltsstoffe:</h4>
 			<ul style="list-style: none">
-				<li data-ng-repeat="ingredient in food.Ingredients">{{ingredient}}</li>
+				<li data-ng-repeat="ingredient in item.Ingredients">{{ingredient}}</li>
 			</ul>
 		</div>
 
@@ -36,7 +36,7 @@
 	<div class="modal-footer">
 		<div>
 			<button class="btn btn-primary" type="button" ng-click="cancel()">Detailliste schließen</button>
-			<button class="btn btn-success" type="button" ng-click="add(food)">Zur Bestellung hinzufügen</button>
+			<button class="btn btn-success" type="button" ng-click="add(item)">Zur Bestellung hinzufügen</button>
 		</div>
 	</div>
 </div>
