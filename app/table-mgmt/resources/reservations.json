@@ -1,0 +1,122 @@
+{
+    "reservation": [
+        {
+            "table": {
+                "id": 101,
+                "entry": [
+                    {
+                        "firstName": "Karl",
+                        "lastName": "Müller",
+                        "email": "Karl@capgemini.de",
+                        "tel": "1758942341",
+                        "amount": 3,
+                        "date": {
+                            "year": 2016,
+                            "month": 1,
+                            "day": 27,
+                            "time": 1
+                        }
+                    },
+                    {
+                        "firstName": "Max",
+                        "lastName": "Mustermann",
+                        "email": "Musterman@T-online.de",
+                        "tel": "05468325",
+                        "amount": 4,
+                        "date": {
+                            "year": 2016,
+                            "month": 1,
+                            "day": 7,
+                            "time": 0
+                        }
+                    },
+                    {
+                        "firstName": "Karl",
+                        "lastName": "Guest",
+                        "email": "Guest@T-Guest.de",
+                        "tel": "060514674",
+                        "amount": 2,
+                        "date": {
+                            "year": 2016,
+                            "month": 1,
+                            "day": 7,
+                            "time": 1
+                        }
+                    },
+                    {
+                        "firstName": "Max",
+                        "lastName": "Walter",
+                        "email": "Walter@Max.de",
+                        "tel": "0687515",
+                        "amount": 4,
+                        "date": {
+                            "year": 2016,
+                            "month": 1,
+                            "day": 8,
+                            "time": 1
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "table": {
+                "id": 102,
+                "entry": [
+                    {
+                        "firstName": "Karl",
+                        "lastName": "Müller",
+                        "email": "Karl@capgemini.de",
+                        "tel": "1758942341",
+                        "amount": 3,
+                        "date": {
+                            "year": 2016,
+                            "month": 1,
+                            "day": 27,
+                            "time": 1
+                        }
+                    },
+                    {
+                        "firstName": "Max",
+                        "lastName": "Mustermann",
+                        "email": "Musterman@T-online.de",
+                        "tel": "05468325",
+                        "amount": 4,
+                        "date": {
+                            "year": 2016,
+                            "month": 1,
+                            "day": 7,
+                            "time": 1
+                        }
+                    },
+                    {
+                        "firstName": "Karl",
+                        "lastName": "Guest",
+                        "email": "Guest@T-Guest.de",
+                        "tel": "060514674",
+                        "amount": 2,
+                        "date": {
+                            "year": 2016,
+                            "month": 1,
+                            "day": 7,
+                            "time": 1
+                        }
+                    },
+                    {
+                        "firstName": "Max",
+                        "lastName": "Walter",
+                        "email": "Walter@Max.de",
+                        "tel": "0687515",
+                        "amount": 4,
+                        "date": {
+                            "year": 2016,
+                            "month": 1,
+                            "day": 8,
+                            "time": 1
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}
