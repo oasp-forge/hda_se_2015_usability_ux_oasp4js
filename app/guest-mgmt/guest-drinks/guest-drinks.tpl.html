@@ -24,7 +24,7 @@
 			<div class="guestPanelBody">
 				<div class="guestPanelItemText">
 				{{drink.Name}}
-					<span class="guestCartItemPrice">{{drink.Price}} €</span>
+					<span class="guestCartItemPrice">{{drink.Price | currency:'€'}} </span>
 				</div>
 					<img data-ng-click="add(drink)" src="../../main/img/add182.svg">
 			</div>

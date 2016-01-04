@@ -1,5 +1,6 @@
-<div class="row" data-ng-controller="GuestBookCntl">
-	<h3>Reservierung</h3>
+<h2>Reservierung</h2>
+<div class="guestContent" data-ng-controller="GuestBookCntl">
+
 
 	<form class="form-horizontal" ng-submit="book()">
 		<div class="form-group">
@@ -38,7 +39,7 @@
 			<label for="date" class="col-sm-2 control-label">Datum</label>
 			<div class="col-sm-6">
 				<p class="input-group">
-				<input type="text" id="date" class="form-control" datepicker-popup="{{format}}" ng-model="user.date" is-open="status.opened" min-date="minDate" max-date="maxDate"
+				<input type="text" id="date" class="form-control" datepicker-popup="{{format}}" data-ng-disabled="true" ng-model="user.date" is-open="status.opened" min-date="minDate" max-date="maxDate"
 				       datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
               <span class="input-group-btn">
                 <button type="button" class="btn btn-default" ng-click="open($event)">

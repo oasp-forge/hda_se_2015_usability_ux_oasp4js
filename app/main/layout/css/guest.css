@@ -6,6 +6,18 @@
     padding-top: 0%;
 }
 
+.guestPrice {
+    font-size: medium;
+}
+
+.guestDescription{
+
+}
+
+.guestFoodTitle{
+    font-size: large;
+}
+
 .guestContent{
     width: 80%;
     height: 80%;
