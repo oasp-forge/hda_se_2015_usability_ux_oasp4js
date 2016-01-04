@@ -1,0 +1,32 @@
+<div>
+    <div class="modal-header">
+        <h3 class="modal-title">Reservierungen - Tisch <span ng-bind="tableNumber"></span></h3>
+    </div>
+    <div class="modal-body">
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>E-mail</th>
+                <th>Telefonnummer</th>
+                <th>Anzahl Personen</th>
+                <th>Datum</th>
+            </tr>
+            </thead>
+
+            <tr ng-repeat="(id, pos) in reservations">
+                <td><h5><span ng-bind="pos.firstName"></span> <span ng-bind="pos.lastName"></span></h5></td>
+                <td><h5 ng-bind="pos.email"></h5></td>
+                <td><h5 ng-bind="pos.tel"></h5></td>
+                <td><h5 ng-bind="pos.amount"></h5></td>
+                <td><h5 ng-cloak>{{pad(pos.date.day,2)+'.'+pad(pos.date.month,2)+'.'+pad(pos.date.year,4)}}</h5></td>
+            </tr>
+        </table>
+
+    </div>
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-danger pull-left" ng-click="close()">Close</button>
+    </div>
+</div>

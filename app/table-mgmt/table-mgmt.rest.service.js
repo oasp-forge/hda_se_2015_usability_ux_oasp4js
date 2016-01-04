@@ -84,6 +84,10 @@ angular.module('app.table-mgmt').factory('tableManagementRestService', function 
          */
         isTableReleasable: function (id) {
             return $http.get(servicePath + '/table/' + id + '/istablereleasable/');
+        },
+
+        getAllReservations: function(){
+            return $http.get('table-mgmt/resources/reservations.json');
         }
     };
 });

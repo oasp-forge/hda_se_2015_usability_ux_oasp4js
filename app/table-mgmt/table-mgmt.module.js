@@ -65,7 +65,13 @@ angular.module('app.table-mgmt', ['app.offer-mgmt', 'app.sales-mgmt', 'app.main'
                 return tables.getPaginatedTables(1, 999).then(function(paginatedTables) {
                     return paginatedTables;
                 });
+
+            }],
+
+            reservations: ['tables', function (tables) {
+                return tables.loadReservations();
             }]
+
         }
     });
 

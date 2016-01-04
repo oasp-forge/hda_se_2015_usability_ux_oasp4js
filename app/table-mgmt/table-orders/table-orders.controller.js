@@ -44,13 +44,22 @@ angular.module('app.table-mgmt')
         };
 
 
+        $scope.preparedSize = function (tableNumber) {
+            var result = [];
+            if ($scope.model[tableNumber] != undefined) {
+                var positions = $scope.prepared(tableNumber) ;
+                result = filterFilter(positions, {'state': '!ORDERED'});
+            }
+            return result.length;
+        };
         $scope.prepared = function (tableNumber) {
             var result = [];
             if ($scope.model[tableNumber] != undefined) {
                 var positions = $scope.model[tableNumber].positions;
                 var prepared = filterFilter(positions, {'state': 'PREPARED'});
                 var delivered = filterFilter(positions, {'state': 'DELIVERED'});
-                result = prepared.concat(delivered);
+                var ordered = filterFilter(positions, {'state': 'ORDERED'});
+                result = prepared.concat(delivered, ordered);
             }
             return result;
         };
@@ -131,8 +140,26 @@ angular.module('app.table-mgmt')
         };
 
 // Color for warning
-        $scope.height = '100px';
-        $scope.bgColor = 'red';
+        $scope.height = '150px';
+        $scope.bgColor = function(tableNumber) {
+
+
+            if ($scope.ordered(tableNumber).length == 0) {
+                return '#0088CC'; // info-blue
+            }
+
+            if (($scope.ordered(tableNumber).length == $scope.delivered(tableNumber).length)) {
+                return '#51A351'; // success-green
+            }
+
+            if ($scope.preparedSize(tableNumber) == $scope.ordered(tableNumber).length) {
+                return '#F89406'; // warning-yellow
+            }
+
+            return '#BD362F'; // danger-red
+        };
+
+
 
 // Pagination
         $scope.selectedItems = [];
@@ -173,6 +200,11 @@ angular.module('app.table-mgmt')
             $scope.reloadTables();
             $scope.reloadOrders();
         });
+
+        $scope.status = {
+            isFirstOpen: true,
+            isFirstDisabled: false
+        };
 
 
     })
