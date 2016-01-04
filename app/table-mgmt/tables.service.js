@@ -36,6 +36,12 @@ angular.module('app.table-mgmt').factory('tables', function (tableManagementRest
                 return response.data;
             });
         },
+
+        loadReservations: function () {
+            return tableManagementRestService.getAllReservations().then(function (response) {
+                return response.data;
+            });
+        },
         /**
          * @ngdoc method
          * @name table-mgmt.tables#getTable

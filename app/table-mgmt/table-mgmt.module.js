@@ -24,7 +24,7 @@ angular.module('app.table-mgmt', ['app.offer-mgmt', 'app.sales-mgmt', 'app.main'
         controllerAs: 'TSC',
         resolve: {
             paginatedTableList: ['tables', function (tables) {
-                return tables.getPaginatedTables(1, 4).then(function(paginatedTables) {
+                return tables.getPaginatedTables(1, 4).then(function (paginatedTables) {
                     return paginatedTables;
                 });
             }]
@@ -47,7 +47,7 @@ angular.module('app.table-mgmt', ['app.offer-mgmt', 'app.sales-mgmt', 'app.main'
         controllerAs: 'TOC',
         resolve: {
             paginatedTableList: ['tables', function (tables) {
-                return tables.getPaginatedTables(1, 999).then(function(paginatedTables) {
+                return tables.getPaginatedTables(1, 999).then(function (paginatedTables) {
                     return paginatedTables;
                 });
             }]
@@ -62,10 +62,16 @@ angular.module('app.table-mgmt', ['app.offer-mgmt', 'app.sales-mgmt', 'app.main'
         controllerAs: 'TOV',
         resolve: {
             paginatedTableList: ['tables', function (tables) {
-                return tables.getPaginatedTables(1, 999).then(function(paginatedTables) {
+                return tables.getPaginatedTables(1, 999).then(function (paginatedTables) {
                     return paginatedTables;
                 });
+
+            }],
+
+            reservations: ['tables', function (tables) {
+                return tables.loadReservations();
             }]
+
         }
     });
 

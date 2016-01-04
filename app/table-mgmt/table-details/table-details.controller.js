@@ -71,7 +71,7 @@ angular.module('app.table-mgmt').controller('TableDetailsCntl',
         //$scope.forms = {};
         $scope.test = function() {
             return tdcSelf.model.order;
-        }
+        };
         tdcSelf.submit = function () {
             globalSpinner.decorateCallOfFunctionReturningPromise(function () {
                 return sales.saveOrUpdateOrder(tdcSelf.model.order);

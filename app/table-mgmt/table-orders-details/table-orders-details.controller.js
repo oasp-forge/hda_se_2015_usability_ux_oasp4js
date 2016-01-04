@@ -2,7 +2,7 @@
  * Created by Oliver Neff on 30.12.2015.
  */
 angular.module('app.table-mgmt')
-    .controller('TableOrdersDetailsCntl', function ($scope, $modalInstance,shownPositions, globalSpinner, sales, tableId, tableOrder, positionStateNotification) {
+    .controller('TableOrdersDetailsCntl', function ($scope, $modalInstance, shownPositions, globalSpinner, sales, tableId, tableOrder, positionStateNotification) {
         'use strict';
 
 
@@ -16,7 +16,7 @@ angular.module('app.table-mgmt')
         };
 
         $scope.change = function (id) {
-                $scope.positions[id].state = 'DELIVERED';
+            $scope.positions[id].state = 'DELIVERED';
         };
 
         $scope.submit = function () {
