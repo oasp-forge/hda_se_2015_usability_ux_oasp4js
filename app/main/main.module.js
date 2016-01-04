@@ -54,15 +54,8 @@ angular.module('app.main', ['ui.router', 'oasp.oaspUi', 'oasp.oaspSecurity', 'ap
                 templateUrl: 'main/layout/page-not-found.html'
             })
 
-            .state('guest', {
-                url:  '/guest',
-                templateUrl: 'main/guest/guest.html',
-                controller: 'GuestCntl',
-                controllerAs: 'GMC'
-            })
-
             .state('signIn', {
-                url: SIGN_IN_DLG_PATH,
+                url: '/signin',
                 templateUrl: 'main/sign-in/sign-in.html',
                 controller: 'SignInCntl',
                 controllerAs: 'SIC'
@@ -77,11 +70,11 @@ angular.module('app.main', ['ui.router', 'oasp.oaspUi', 'oasp.oaspSecurity', 'ap
                 {
                     key: 'en',
                     label: 'English',
-                    'default': true
                 },
                 {
                     key: 'de',
-                    label: 'German'
+                    label: 'German',
+                    'default': true
                 }
             ]
         );

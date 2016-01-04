@@ -12,9 +12,4 @@ angular.module('app.main')
         };
         signIn(this, signInSuccessCallback);
 
-
-        $scope.guest = function() {
-            $state.go('guest')
-        }
-
     });

@@ -1,0 +1,51 @@
+<div class="navbar navbar-inverse navbar-fixed-top guestNavbar" role="navigation" xmlns="http://www.w3.org/1999/html">
+	<div class="container">
+		<div class="guestSearchNavbar ">
+			<input data-ng-model="search" data-ng-change="searchChange()" placeholder="Suche..."></div>
+		<div class="guestCenterNavbar"><h1>Getränkekarte</h1></div>
+	</div>
+</div>
+<div data-ng-controller="GuestDrinksCntl" class="guestContent">
+
+	<ui-select class="guestSearch" ng-model="selecteditem.selected" theme="bootstrap"
+	           search-enabled="true" reset-search-input="true" on-select="someFunction($item, $model)">
+		<ui-select-match placeholder="Kategorie auswählen">
+			<span>{{$select.selected.Type}}</span>
+			<span class="glyphicon glyphicon-remove" style="float: right;margin-right: 5%" data-ng-click="clear()"></span>
+		</ui-select-match>
+		<ui-select-choices repeat="item in drinks| unique:'Type'| category:'0'|filter:$select.search">
+			<span ng-bind="item.Type"></span>
+		</ui-select-choices>
+	</ui-select>
+
+
+	<div class="row">
+		<div data-ng-repeat="drink in drinks |filter:search | filter: filterType | category:'0' | slice:pageStart:pageEnd " class="guestPanel">
+			<div class="guestPanelBody">
+				<div class="guestPanelItemText">
+				{{drink.Name}}
+					<span class="guestCartItemPrice">{{drink.Price}} €</span>
+				</div>
+					<img data-ng-click="add(drink)" src="../../main/img/add182.svg">
+			</div>
+		</div>
+	</div>
+	<div class="guestPagination">
+	<pagination items-per-page="itemsPerPage" boundary-links="true" ng-change="changePage()" total-items="totalItems" ng-model="currentPage" class="pagination-sm"
+	            previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></pagination>
+	</div>
+
+<button type="button" class="btn btn-danger" ui-sref="guestMgmt.overview"> Abbrechen <br>
+	<small>Essensbestellung</small>
+</button>
+
+<button type="button" class="btn btn-success btn-right" data-ng-click="cart()">
+	<div class="guestCartText">Ihre Bestellliste <br>
+		<small>Zusammenfassung</small>
+	</div>
+	<div class="guestCart"><img src="../../main/img/marker20.svg"><span class="guestNumber">{{number}}</span></div>
+
+</button>
+
+
+</div>

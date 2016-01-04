@@ -1,0 +1,213 @@
+{
+  "articles": [
+    {
+      "Id": 1,
+      "OrderId":1,
+      "Name": "Coca Cola",
+      "Category": "0",
+      "Type": "Softdrink",
+      "Price": "1.99",
+      "Ingredients": [
+        "Ingredient 1",
+        "Ingredient 2"
+      ]
+    },
+    {
+      "Id": 2,
+      "OrderId": 1,
+      "Name": "Fanta",
+      "Category": "0",
+      "Type": "Softdrink",
+      "Price": "1.99",
+      "Ingredients": [
+        "Ingredient 1",
+        "Ingredient 2"
+      ]
+    },{
+      "Id": 3,
+      "Name": "Sprite",
+      "Category": "0",
+      "Type": "Softdrink",
+      "Price": "1.99",
+      "Ingredients": [
+        "Ingredient 1",
+        "Ingredient 2"
+      ]
+    },
+    {
+      "Id": 4,
+      "Name": "Wasser",
+      "Category": "0",
+      "Type": "Softdrink",
+      "Price": "1.99",
+      "Ingredients": [
+        "Ingredient 1",
+        "Ingredient 2"
+      ]
+    },{
+      "Id": 5,
+      "Name": "Bier",
+      "Category": "0",
+      "Type": "Beer",
+      "Price": "1.99",
+      "Ingredients": [
+        "Ingredient 1",
+        "Ingredient 2"
+      ]
+    },
+    {
+      "Id": 6,
+      "Name": "Sex on the Beach",
+      "Category": "0",
+      "Type": "Cocktail",
+      "Price": "1.99",
+      "Ingredients": [
+        "Ingredient 1",
+        "Ingredient 2"
+      ]
+    },
+    {
+      "Id": 7,
+      "Name": "Schnitzel Wiener Art",
+      "Category": "1",
+      "Type": "vom Schwein",
+      "Price": "7.99",
+      "Ingredients": ["Ingredient 1", "Ingredient 2"],
+      "Description": "Schweineschnitzel nach Wiener Art",
+      "SideDish": 0,
+      "OptionalSideDishes":[
+        "Pommes und Ketchup",
+        "Ofenkartoffel"
+        ]
+    },
+    {"Id": 8,
+      "Name": "Jägerschnitzeln",
+      "Category": "1",
+      "Type": "vom Schwein",
+      "Price": "7.99",
+      "Ingredients": ["Ingredient 1", "Ingredient 2"],
+      "Description": "Schweineschnitzel mit Pilzsauce",
+      "SideDish": 0,
+      "OptionalSideDishes":[
+        "Pommes und Ketchup",
+        "Ofenkartoffel"
+        ]
+    },
+    {
+      "Id": 9,
+      "Name": "Argentinisches Rumpsteak",
+      "Category": "1",
+      "Type": "vom Rind",
+      "Price": "15.99",
+      "Ingredients": [
+        "Ingredient 1",
+        "Ingredient 2"
+      ],
+      "Description": "Echtes argentinisches Rumpsteak",
+      "SideDish": 0,
+      "OptionalSideDishes":[
+        "Pommes und Ketchup",
+        "Ofenkartoffel"
+        ]
+    },
+    {
+      "Id": 10,
+      "Name": "Fischgericht 1",
+      "Category": "1",
+      "Type": "Fisch",
+      "Price": "12.99",
+      "Ingredients": [
+        "Ingredient 1",
+        "Ingredient 2"
+      ],
+      "Description": "Beschreibung für Fischgericht",
+      "SideDish": 0,
+      "OptionalSideDishes":[
+        "Reis",
+        "Ofenkartoffel"
+        ]
+    },
+    {
+      "Id": 11,
+      "Name": "Vegetarisches Gericht 1",
+      "Category": "1",
+      "Type": "Vegetarisch",
+      "Price": "9.99",
+      "Ingredients": [
+        "Ingredient 1",
+        "Ingredient 2"
+      ],
+      "Description": "Beschreibung für vegetarisches Gericht",
+      "SideDish": 0,
+      "OptionalSideDishes":[
+        "Pommes und Ketchup",
+        "Ofenkartoffel"
+        ]
+    },
+    {
+      "Id": 12,
+      "Name": "Rahmschnitzel",
+      "Category": "1",
+      "Type": "vom Schwein",
+      "Price": "7.99",
+      "Ingredients": ["Ingredient 1", "Ingredient 2"],
+      "Description": "Paniertes Schweineschnitzel mit Rahmsauce",
+      "SideDish": 0,
+      "OptionalSideDishes":[
+        "Pommes und Ketchup",
+        "Ofenkartoffel"
+        ]
+    },
+    {
+      "Id": 13,
+      "Name": "Argentinisches Rumpsteak",
+      "Category": "1",
+      "Type": "vom Rind",
+      "Price": "15.99",
+      "Ingredients": [
+        "Ingredient 1",
+        "Ingredient 2"
+      ],
+      "Description": "Echtes argentinisches Rumpsteak",
+      "SideDish": 0,
+      "OptionalSideDishes":[
+        "Pommes und Ketchup",
+        "Ofenkartoffel"
+        ]
+    },
+    {
+      "Id": 14,
+      "Name": "Fischgericht 1",
+      "Category": "1",
+      "Type": "Fisch",
+      "Price": "12.99",
+      "Ingredients": [
+        "Ingredient 1",
+        "Ingredient 2"
+      ],
+      "Description": "Beschreibung für Fischgericht",
+      "SideDish": 0,
+      "OptionalSideDishes":[
+        "Reis",
+        "Ofenkartoffel"
+        ]
+    },
+    {
+      "Id": 15,
+      "Name": "Vegetarisches Gericht 1",
+      "Category": "1",
+      "Type": "Vegetarisch",
+      "Price": "9.99",
+      "Ingredients": [
+        "Ingredient 1",
+        "Ingredient 2"
+      ],
+      "Description": "Beschreibung für vegetarisches Gericht",
+      "SideDish": 0,
+      "OptionalSideDishes":[
+        "Pommes und Ketchup",
+        "Ofenkartoffel"
+        ]
+    }
+  ]
+}

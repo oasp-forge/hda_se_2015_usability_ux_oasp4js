@@ -1,0 +1,17 @@
+
+<alert ng-repeat="alert in alerts" close="closeAlert($index)" type="{{alert.type}}"><h4>{{alert.header}}</h4>{{alert.msg}}</alert>
+
+
+<div class="guest">
+	<h3>Herzlich Willkommen</h3>
+
+	<a class="cardButton" ui-sref="guestMgmt.overview">
+		<img src="../../main/img/restaurant31.svg">
+		<p>zur Speisekarte</p>
+	</a>
+	<a class="cardButton" ui-sref="guestMgmt.book">
+		<img src="../../main/img/calendar68.svg">
+		<p>Reservierung</p>
+	</a>
+
+</div>

@@ -1,0 +1,252 @@
+.guest {
+    background-color: #003B73;
+    width: 100%;
+    height: 100%;
+    margin-top:0;
+    padding-top: 0%;
+}
+
+.guestContent{
+    width: 80%;
+    height: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+    display: block;
+}
+
+.guestHead {
+    width: 100%;
+    margin: 0;
+    padding: 0.3%;
+}
+
+.guestCenterNavbar {
+    display: block;
+}
+
+
+
+.guestAdd > img {
+    width: 100%;
+}
+
+.guestAdd > img {
+    cursor: pointer;
+}
+
+.guestCartText {
+    display: inline-block;
+}
+
+.guestCart {
+    display: inline-block;
+    width: 50%;
+    position: relative;
+    right: 10%;
+    padding: 5%;
+
+}
+
+.guestPagination {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+
+.guestModalHeader {
+    display: block;
+    width: 100%;
+}
+
+.guestModalHeader > img {
+    width: 5%;
+    display: inline-block;
+}
+
+.guestModalHeader > h3 {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+    text-align: center;
+}
+
+.guestNumber {
+    z-index: 20000;
+    position: absolute;
+    color: black;
+    padding: 0px;
+    margin: 0;
+    display: inline-block;
+    font-size: 100%;
+    font-weight: 500;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 45%;
+    width: 40%;
+    right: 20%;
+    top: 20%
+
+}
+
+.guestCenterNavbar {
+    margin: auto;
+    color: white;
+    text-align: center;
+    font-family: inherit;
+    font-weight: 400;
+    line-height: 1;
+    width: 20%;
+
+}
+
+.guestSearchNavbar {
+    float: right;
+    margin-top: 2.5%;
+    width: 20%;
+    display: inline-block;
+    text-align: center;
+
+}
+
+.guestHead > h1 {
+    text-align: center;
+    color: black;
+}
+
+.content {
+    width: 80%;
+    height: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    display: block;
+}
+
+.guest > h3 {
+    padding-top: 3%;
+    text-align: center;
+    color: white;
+
+}
+
+.cardButton {
+    background-color: white;
+    display: inline-block;
+    margin: 5%;
+    margin-right: 2.5%;
+    width: 40%;
+    height: 40%;
+    border: 3px solid black;
+    text-align: center;
+
+}
+
+.cardButton:hover {
+    text-decoration: none;
+}
+
+.cardButton > img {
+    width: inherit;
+}
+
+.selected-class-name {
+    color: red;
+    border: 1px solid black;
+    padding-left: 1%;
+    width: 70%;
+    font-weight: 700;
+}
+
+.btn-right {
+    display: inline-block;
+    float: right;
+}
+
+.btn-left {
+    display: inline-block;
+    float: left;
+}
+
+.guestSearch {
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.guestCartSummary {
+    display: block;
+    width: 90%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2%;
+}
+.guestCartRemove {
+    width: 5%;
+    cursor: pointer;
+
+}
+.guestCartNoItems {
+    width: 100%;
+    text-align: center;
+    font-size:large ;
+}
+
+.guestCartItem {
+    border: solid black 2px;
+    margin: 0.4em;
+    width: 80%;
+    display: inline-block;
+    padding: 0.5em;
+
+}
+
+.guestAdd {
+    width: 10%;
+    float: right;
+}
+.guestPanel {
+    margin-bottom: 5%;
+    border: 1px solid black;
+    margin-right: 5%;
+    width: 45%;
+    display: inline-block;
+}
+
+.guestPanelBody {
+    display: inline-block;
+    width: 100%;
+    float: left;
+}
+
+.guestPanelItemText {
+ display: inline-block;
+    width: 80%;
+    margin-top: 4%;
+    margin-left: 3%;
+    font-size: large;
+    font-weight: 300;
+
+}
+
+.guestPanelBody > img {
+    background-color: white;
+    width: 13%;
+    display: inline-block;
+    float: right;
+    margin-right: -5%;
+    cursor: pointer;
+}
+.guestPanelItem{
+    width: 80%
+}
+
+.guestCartItemPrice {
+    float:right;
+    font-size: medium;
+}
+

@@ -1,0 +1,80 @@
+<div class="row" data-ng-controller="GuestBookConfirmCntl">
+	<h3>Bitte bestätigen Sie ihre eingabe</h3>
+
+	<form class="form-horizontal">
+		<div class="form-group">
+			<label for="name" class="col-sm-2 control-label">Vorname</label>
+			<div class="col-sm-6">
+				<input type="text" class="form-control" id="name" data-ng-model="user.name" disabled placeholder="Vorname">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="surname" class="col-sm-2 control-label">Nachname</label>
+			<div class="col-sm-6">
+				<input type="text" class="form-control" data-ng-model="user.surename" disabled required id="surname" placeholder="Nachname">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="email" class="col-sm-2 control-label">E-Mail-Adresse</label>
+			<div class="col-sm-6">
+				<input type="email" class="form-control" data-ng-model="user.email" disabled id="email" placeholder="E-Mail-Adresse">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="phone" class="col-sm-2 control-label">Telefonnummer</label>
+			<div class="col-sm-6">
+				<input type="tel" class="form-control" data-ng-model="user.phone" disabled id="phone" placeholder="Telefonnummer">
+			</div>
+		</div>
+
+		<hr>
+		<div class="form-group">
+			<label for="people" class="col-sm-2 control-label">Anzahl der Personen</label>
+			<div class="col-sm-6">
+				<input type="number" class="form-control" id="people" data-ng-model="user.people" disabled placeholder="Anzahl der Personen">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="date" class="col-sm-2 control-label">Datum</label>
+			<div class="col-sm-6">
+				<p class="input-group">
+					<input type="text" id="date" class="form-control" datepicker-popup="{{format}}" ng-model="user.date" is-open="status.opened" min-date="minDate" max-date="maxDate"
+					       datepicker-options="dateOptions" date-disabled="disabled(date, mode)" disabled close-text="Close" />
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" disabled ng-click="open($event)">
+	                <i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+				</p>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Uhrzeit</label>
+			<div class="col-sm-6">
+				<label class="radio-inline">
+					<input type="radio" name="time" data-ng-model="user.time" disabled id="inlineRadio1" value="mittag" checked> Mittags
+				</label>
+				<label class="radio-inline">
+					<input type="radio" name="time" data-ng-model="user.time" disabled id="inlineRadio2" value="abend"> Abends
+				</label>
+			</div>
+		</div>
+
+
+		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-4">
+				<button type="button" class="btn btn-danger" ui-sref="guestMgmt.welcome">Abbrechen</button>
+
+			</div>
+			<div class="col-sm-2">
+				<button type="button" class="btn btn-warning" ui-sref="guestMgmt.book">Angaben bearbeiten</button>
+			</div>
+			<div class="col-sm-2">
+				<button type="submit" class="btn btn-primary" data-ng-click="book()">Reservierung abschicken</button>
+			</div>
+
+		</div>
+
+	</form>
+
+
+</div>

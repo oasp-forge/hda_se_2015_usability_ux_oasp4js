@@ -31,6 +31,8 @@ angular.module('app.sales-mgmt').factory('salesManagementRestService', function 
          * @return {HttpPromise} http promise
          */
         saveOrder: function (order) {
+            console.log(servicePath+'/order');
+            console.log(order);
             return $http.post(servicePath + '/order', order);
         },
         /**

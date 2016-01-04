@@ -34,8 +34,9 @@ angular.module('app.main')
             return appContext.getCurrentUser().then(function (currentUser) {
                 if (currentUser.isLoggedIn()) {
                     $location.url(currentUser.getHomeDialogPath());
+
                 } else {
-                    $state.go('signIn');
+                    $state.go('guestMgmt.welcome');
                 }
             });
         };
