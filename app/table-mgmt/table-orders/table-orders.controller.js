@@ -47,7 +47,7 @@ angular.module('app.table-mgmt')
         $scope.preparedSize = function (tableNumber) {
             var result = [];
             if ($scope.model[tableNumber] != undefined) {
-                var positions = $scope.prepared(tableNumber) ;
+                var positions = $scope.prepared(tableNumber);
                 result = filterFilter(positions, {'state': '!ORDERED'});
             }
             return result.length;
@@ -96,7 +96,6 @@ angular.module('app.table-mgmt')
                         changes = true;
                     }
                 }
-                // TODO I should submit after do that.
                 if (changes) {
                     $scope.submit(tableNumber);
                 }
@@ -120,28 +119,9 @@ angular.module('app.table-mgmt')
         };
 
 
-        $scope.cart = function (size) {
-
-            var modalInstance = $modal.open({
-                animation: false,
-                templateUrl: 'guest-mgmt/guest-cart/guest-cart.tpl.html',
-                controller: 'GuestCartCntl',
-                size: "lg",
-                resolve: {
-                    items: function () {
-                        return menu.getCart();
-                    }
-                }
-            });
-
-            modalInstance.result.then(function () {
-
-            });
-        };
-
 // Color for warning
         $scope.height = '150px';
-        $scope.bgColor = function(tableNumber) {
+        $scope.bgColor = function (tableNumber) {
 
 
             if ($scope.ordered(tableNumber).length == 0) {
@@ -158,7 +138,6 @@ angular.module('app.table-mgmt')
 
             return '#BD362F'; // danger-red
         };
-
 
 
 // Pagination
@@ -200,12 +179,5 @@ angular.module('app.table-mgmt')
             $scope.reloadTables();
             $scope.reloadOrders();
         });
-
-        $scope.status = {
-            isFirstOpen: true,
-            isFirstDisabled: false
-        };
-
-
     })
 ;

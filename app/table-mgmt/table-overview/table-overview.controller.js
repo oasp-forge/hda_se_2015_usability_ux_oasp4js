@@ -2,7 +2,7 @@
  * Created by Oliver Neff on 01.01.2016.
  */
 angular.module('app.table-mgmt')
-    .controller('TableOverviewCntl', function ($scope,$modal, $filter, paginatedTableList, tables, reservations, globalSpinner) {
+    .controller('TableOverviewCntl', function ($scope, $modal, $filter, paginatedTableList, tables, reservations, globalSpinner) {
         'use strict';
 
         $scope.details = function (id, tableNumber) {
@@ -17,11 +17,12 @@ angular.module('app.table-mgmt')
                     },
                     reservations: function () {
                         if ($scope.reservations[id] != undefined) {
-                        var entry = $scope.reservations[id].table.entry;
-                        var result = $filter('orderBy')(entry, $scope.sortDate);
-                        if (result != undefined) {
-                            return result;
-                        }}
+                            var entry = $scope.reservations[id].table.entry;
+                            var result = $filter('orderBy')(entry, $scope.sortDate);
+                            if (result != undefined) {
+                                return result;
+                            }
+                        }
                         return [];
                     }
                 }
@@ -32,7 +33,7 @@ angular.module('app.table-mgmt')
         };
 
         // Panels
-        $scope.panelState = function(state,id) {
+        $scope.panelState = function (state, id) {
             if (state == 'OCCUPIED') {
                 return 'panel-danger';
             }
@@ -45,16 +46,16 @@ angular.module('app.table-mgmt')
             return null;
         };
 
-        $scope.setFree = function(table) {
+        $scope.setFree = function (table) {
             globalSpinner.decorateCallOfFunctionReturningPromise(function () {
                 return tables.free(table).then($scope.reloadTables);
             });
         };
 
-        $scope.setOccupy = function(table) {
-                globalSpinner.decorateCallOfFunctionReturningPromise(function () {
-                    return tables.occupy(table).then($scope.reloadTables);
-                });
+        $scope.setOccupy = function (table) {
+            globalSpinner.decorateCallOfFunctionReturningPromise(function () {
+                return tables.occupy(table).then($scope.reloadTables);
+            });
         };
 
         // Pagination
@@ -78,32 +79,33 @@ angular.module('app.table-mgmt')
 
         // reservations
         $scope.reservations = [];
-        $scope.reloadReservations = function() {
+        $scope.reloadReservations = function () {
             $scope.reservations = reservations.reservation;
         };
 
-        $scope.pad = function(n, width, z) {
+        $scope.pad = function (n, width, z) {
             z = z || '0';
             n = n + '';
             return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
         };
 
 
-        $scope.getTime = function(time) {
+        $scope.getTime = function (time) {
             if (time != undefined) {
-            if (time == 0) {
-                return 'Mittag'
+                if (time == 0) {
+                    return 'Mittag'
+                }
+                return 'Abend'
             }
-            return 'Abend' }
             return null;
         };
 
-        $scope.sortDate = function(entry) {
+        $scope.sortDate = function (entry) {
             var date = entry.date;
             return date.year * 10000 + date.month * 1000 + date.day * 10 + date.time;
         };
 
-        $scope.getFirst =  function(tableNumber) {
+        $scope.getFirst = function (tableNumber) {
             if ($scope.reservations[tableNumber] != undefined) {
                 var entry = $scope.reservations[tableNumber].table.entry;
                 var result = $filter('orderBy')(entry, $scope.sortDate);
@@ -121,5 +123,4 @@ angular.module('app.table-mgmt')
         });
 
 
-
-});
+    });

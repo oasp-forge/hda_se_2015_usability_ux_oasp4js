@@ -33,7 +33,7 @@ angular.module('app.table-mgmt')
         });
 
         $scope.value = "hello";
-        $scope.go = function() {
+        $scope.go = function () {
             $state.go('tableMgmt.overview');
         }
 

@@ -3,9 +3,11 @@
         <h4 class="panel-title pull-left" style="padding-top: 7.5px;" ng-cloak>Tisch {{ table.number}}</h4>
 
         <div class="btn-group pull-right">
-            <button type="button" class="btn btn-primary btn-sm" ng-click="setFree(table)" ng-class="{'active': table.state == 'FREE'} ">Frei
+            <button type="button" class="btn btn-primary btn-sm" ng-click="setFree(table)"
+                    ng-class="{'active': table.state == 'FREE'} ">Frei
             </button>
-            <button type="button" class="btn btn-primary btn-sm" ng-click="setOccupy(table)" ng-class="{'active': table.state == 'OCCUPIED'}">
+            <button type="button" class="btn btn-primary btn-sm" ng-click="setOccupy(table)"
+                    ng-class="{'active': table.state == 'OCCUPIED'}">
                 Belegt
             </button>
         </div>
@@ -32,6 +34,8 @@
                   ng-bind="pad(getFirst(id).date.day,2)+'.'+pad(getFirst(id).date.month,2)+'.'+pad(getFirst(id).date.year,4)"></span>
             <span ng-if="getFirst(id)">zu</span> <span ng-bind=" getTime(getFirst(id).date.time)"> </span></p>
         <br>
-        <button type="button" ng-click="details(id,table.number)" class="btn btn-primary btn-block">Reservierungen anzeigen</button>
+        <button type="button" ng-click="details(id,table.number)" class="btn btn-primary btn-block">Reservierungen
+            anzeigen
+        </button>
     </div>
 </div>
